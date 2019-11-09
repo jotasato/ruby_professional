@@ -174,3 +174,113 @@ puts t1 || f1
 
 puts f1 || f2
 #出力結果 false
+
+# &&と||を組み合わせて使うこともできる
+# &&の優先順位は||より高い為下記の場合、「条件1かつ条件2が真、または条件3かつ条件4が真なら真」
+#条件1 && 条件2 || 条件3 && 条件4
+#(条件1 && 条件2 || 条件3 && 条件4)となる
+
+t1 = true
+t2 = true
+t3 = false
+t4 = false
+
+puts t1 && t2 || t3 && t4
+#出力結果 true
+
+#優先順位を変えたい場合は()を使う。下記コードは条件1が真かつ、条件2または条件3が真かつ、条件4が真なら真」の意味になります。
+#条件1 && ( 条件2 || 条件3 ) && 条件4
+
+t1 = true
+t2 = true
+f1 = false
+f2 = false
+
+puts t1 && ( t2 || f1 ) && f2
+#出力結果 false
+
+# !演算子を使うと真切りを反転することができる。真我に偽に、偽が真になる。
+t1 = true
+f1 = false
+
+puts !t1
+#出力結果 false
+puts !f1
+#出力結果 true
+
+#()と組み合わせると()の中の真偽値を反転させることができる。
+t1 = true
+f1 = false
+
+puts t1 && f1
+#出力結果 false
+puts !(t1 && f1)
+#出力結果 true
+
+#if分条件分岐
+
+# if 条件A
+#   #条件Aが真だった場合の処理
+# elsif 条件B
+#   #条件Bが真だった場合の処理
+# elsif 条件c
+#   # 条件Cが真だった場合の処理
+# else
+#   #それ以外の条件の処理
+# end
+
+#if文の戻り値を変数に代入する
+country = "italy"
+
+greeting =
+if country == "japan"
+  "こんにちは"
+elsif
+  country == "us"
+  "Hello"
+elsif
+  country == "italy"
+  "ciao"
+else
+  "???"
+end
+
+#if文の結果を出力できるようになる。
+puts greeting 
+#出力結果 ciao
+
+
+
+#1日であればポイント5倍
+#どちらとも出力結果は同じになる。2つめのif分は後置ifといってifを修飾子として文の後ろに置くことができる。
+
+day = 1
+point = 7
+if day == 1
+  puts point *= 5
+end
+#出力結果35
+
+point = 7
+day = 1
+point *=5  if day == 1
+puts point
+#出力結果35
+
+
+# #ifとelsifの後ろにthenを入れることができる。
+# if 条件A then
+#   #条件Aが真だった場合の処理
+# elsif 条件B then
+#   #条件Bが真だった場合の処理
+# else
+#   # それ以外の処理
+# end
+
+# country = "italy"
+# if country == "japan" then "こんにちは"
+# elsif country == "us" then "Hello"
+# elsif country == "italy" then "ciao"
+# else "???"
+# end
+
